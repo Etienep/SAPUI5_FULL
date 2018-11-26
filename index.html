@@ -1,24 +1,30 @@
+<html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Imagens de Cachorros Randômicos</title>
+		<title>Random Dog</title>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
 		<script>
-			
+	          function carregar(){
+	          	//chamar a função de carregar imagens randon dog
+	         var url= "https://random.dog/woof.json";
+
+	         $.get(url, function(oResponse){
+	         	
+	          $("#imagem").attr("src", oResponse.url);
+	          });
+	          
+	          }
 		</script>
 		
-		
 	</head>
-	
 	<body>
-         <button>Carregar imagem</button>
-		<!--<header>-->
-		<!--	<h1>Título</h1>-->
-		<!--</header>-->
-		
-		<!--<main>-->
-
-		<!--</main>-->
-		
+		<main>
+			<button onclick="carregar()" >Carregar Imagem</button>
+		    <br/>
+		    <img id="imagem" src="" />
+		    
+		</main>
 	</body>
-	
 </html>
